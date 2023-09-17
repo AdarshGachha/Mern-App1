@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 const page = () => {
-    const [posts, setposts] = useState([]);
+    const [posts, setPosts] = useState([]);
     const [hasMore, setHasMore] = useState(true);
     const getmoreposts = async () => {
         try {
@@ -13,7 +13,7 @@ const page = () => {
                 `https://jsonplaceholder.typicode.com/posts?_limit=10&_start=${posts.length}`
             );
             data.length === 0 ? setHasMore(false) : "";
-            setposts([...posts, ...data]);
+            setPosts([...posts, ...data]);
         } catch (err) {
             console.log(err);
         }
