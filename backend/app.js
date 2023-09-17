@@ -15,6 +15,6 @@ app.use(require("cors")({ credentials: true, origin: true }));
 app.use("/api/v1", require("./routes/indexRoute"));
 
 app.listen(
-    process.env.PORT,
+    process.env.PORT || 3000,
     console.log(`Server running on port ${process.env.PORT}`)
 );
