@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(require("cors")({ credentials: true, origin: true }));
 
 // routes
-app.use("/api/v1", require("./routes/indexRoute"));
+app.use("/", require("./routes/indexRoute"));
 
 app.listen(
     process.env.PORT || 3000,
